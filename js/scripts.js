@@ -21,15 +21,20 @@ $(document).ready(function(){
         var thousands = digitFour[digits[3]];
       }
     if (number >= 4000) {
-      console.log("This number is too high!")
+      $("#translation").append("This number is too high!");
+    } else if (number < 1) {
+      $("#translation").append("This number is too low!");
     } else if (thousands) {
-      console.log(thousands + hundreds + tens + ones)
+      $("#translation").append(thousands + hundreds + tens + ones);
     } else if (hundreds) {
-      console.log(hundreds + tens + ones)
+      $("#translation").append(hundreds + tens + ones);
     } else if (tens) {
-      console.log(tens + ones);
+      $("#translation").append(tens + ones);
     } else if (ones) {
-      console.log(ones);
+      $("#translation").append(ones);
     }
+    });
+    $("#refresh").click(function(){
+  location.reload();
     });
   });
