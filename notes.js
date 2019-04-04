@@ -4,3 +4,7 @@ if (number === 5){
   $("#translation").append("it's four");
 } else if (number === 9) {
   $("#translation").append("it's nine");
+
+
+return digits[1]
+  $(parseInt(digits.charAt(0)))
