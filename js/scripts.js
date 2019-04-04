@@ -1,10 +1,10 @@
 
 
 var romanRay = [];
-var digitOne = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
-var digitTwo = [ "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
-var digitThree = ["C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
-var digitFour = ["M", "MM", "MMM"]
+var digitOne = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+var digitTwo = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+var digitThree = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+var digitFour = ["", "M", "MM", "MMM"]
 
 $(document).ready(function(){
   $("form#romanNum").submit(function(event){
@@ -15,12 +15,14 @@ $(document).ready(function(){
       var roman = digits[i] * (10**i);
       romanRay.push(roman);
 
-        var ones= digitOne[digits[0] - 1];
-        var tens = digitTwo[digits[1]-1];
-        var hundreds = digitThree[digits[2]-1];
-        var thousands = digitFour[digits[3]-1];
+        var ones= digitOne[digits[0]];
+        var tens = digitTwo[digits[1]];
+        var hundreds = digitThree[digits[2]];
+        var thousands = digitFour[digits[3]];
       }
-    if (thousands) {
+    if (number >= 4000) {
+      console.log("This number is too high!")
+    } else if (thousands) {
       console.log(thousands + hundreds + tens + ones)
     } else if (hundreds) {
       console.log(hundreds + tens + ones)
