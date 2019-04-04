@@ -1,6 +1,6 @@
 
 
-
+var roman = [];
 
 $(document).ready(function(){
   $("form#romanNum").submit(function(event){
@@ -8,7 +8,11 @@ $(document).ready(function(){
     var number = $("input#inputNumber").val();
     $("#translation").append(number);
     var digits = number.split("").reverse();
-    console.log(digits);
+    for (var i = 0; i < digits.length; i++) {
+      var roman = digits[i] * (10**i);
+      console.log(roman);
+    }
+
 
 
 
