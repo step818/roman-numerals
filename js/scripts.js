@@ -1,5 +1,5 @@
 
-var digits = []
+
 
 
 $(document).ready(function(){
@@ -7,9 +7,10 @@ $(document).ready(function(){
     event.preventDefault();
     var number = $("input#inputNumber").val();
     $("#translation").append(number);
-    var splitNumber= number.split("");
-    digits.push(splitNumber);
-    console.log(splitNumber)
+    var digits = number.split("").reverse();
+    console.log(digits);
+
+
 
 
 
